@@ -4,7 +4,6 @@
   background: url(/header_img.png) no-repeat;
   background-size: contain;
   position: relative;
-  
 }
 .header-contents {
   display: flex;
@@ -37,11 +36,30 @@
 }
 
 @keyframes fadeIn {
-    0%{
-        opacity: 0;
-    }
-    100%{
-        opacity: 1;
-    }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 
+
+@media(max-width:1050px){
+  
+  .header-contents{
+    max-width: 45%;
+  }
+}
+
+@media(max-width:750px){
+  .header-contents{
+    max-width: 64%;
+  }
+  .header-contents p{
+    display: none;
+  }
+  .header-contents button{
+    padding: 2vw 4vw;
+  }
 }
