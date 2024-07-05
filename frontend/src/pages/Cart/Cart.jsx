@@ -6,8 +6,8 @@ import { useNavigate } from "react-router-dom";
 const Cart = () => {
   const { cartItems, food_list, removeFromCart, getTotalCartAmount } =
     useContext(StoreContext);
-    
-    const navigate = useNavigate();
+
+  const navigate = useNavigate();
 
   return (
     <div className="cart">
@@ -53,15 +53,19 @@ const Cart = () => {
             <hr />
             <div className="cart-total-details">
               <p>Delivery Fees</p>
-              <p>{10}</p>
+              <p>{getTotalCartAmount() === 0 ? 0 : 10}</p>
             </div>
             <hr />
             <div className="cart-total-details">
               <b>Total</b>
-              <b>{getTotalCartAmount() + 10}</b>
+              <b>
+                {getTotalCartAmount() === 0 ? 0 : getTotalCartAmount() + 10}
+              </b>
             </div>
           </div>
-          <button onClick={() => navigate('/order')}>PROCCED TO CHECKOUT</button>
+          <button onClick={() => navigate("/order")}>
+            PROCCED TO CHECKOUT
+          </button>
         </div>
         <div className="cart-promocode">
           <p>If you have promocode, so Enter it Here</p>
